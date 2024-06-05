@@ -1,0 +1,179 @@
+KV = '''
+BoxLayout:
+    orientation: 'vertical'
+    padding: [dp(0), dp(0)]
+    spacing: dp(0)
+
+    MDFloatLayout:
+        canvas.before:
+            Rectangle:
+                source: 'background.png'
+                size: dp(482), dp(1000)  # Use the actual image resolution
+                pos: self.pos
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (0.7, 0.85)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            spacing: dp(3)
+
+            Widget:
+                size_hint_y: None
+                height: dp(150)
+
+            MDLabel:
+                id: result_label
+                halign: 'center'
+                valign: 'middle'
+                font_name: 'font2'
+                font_size: '100sp'
+                theme_text_color: 'Custom'
+                text_color: 1, 0, 0, 1
+                size_hint_y: 0.1
+                height: dp(80)
+
+            Widget:
+                size_hint_y: None
+                height: dp(10)
+
+            CustomTextInput:
+                id: input_field
+                hint_text: 'Distance'
+                input_filter: 'int'
+                font_name: 'font1'
+                font_size: '40sp'
+                size_hint: (0.55, None)
+                pos_hint: {'center_x': 0.5}
+                height: dp(80)
+                multiline: False
+                mode: 'fill'
+                max_text_length: 4
+                fill_color_normal: app.theme_cls.colors['Gray']['500']
+                fill_color_active: 0.7, 0.7, 0.3, 1
+                text_color: 0, 0, 0, 1
+
+            Widget:
+                size_hint_y: None
+                height: dp(85)
+
+            CustomButton:
+                id: enter_button
+                text: 'Enter'
+                font_size: '45sp'
+                size_hint_y: None
+                height: dp(66)
+                size_hint_x: 0.7
+                pos_hint: {'center_x': 0.5}
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_press: app.lookup()
+                ripple_scale: 0
+
+            Widget:
+                size_hint_y: None
+                height: dp(265)
+
+        GridLayout:
+            cols: 3
+            rows: 4
+            spacing: dp(20)
+            size_hint: (0.49, 0.49)  # Adjusted to maintain aspect ratio
+            pos_hint: {'center_x': 0.5, 'center_y': 0.37}
+
+            CustomButton:
+                text: "7"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "8"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "9"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "4"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "5"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "6"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "1"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "2"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "3"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "CLR"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.clear_text_input()
+                ripple_scale: 0
+
+            CustomButton:
+                text: "0"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.on_keypad_button_press(self.text)
+                ripple_scale: 0
+
+            CustomButton:
+                text: "i"
+                size_hint: None, None
+                size: dp(84), dp(84)
+                md_bg_color: app.theme_cls.colors['Gray']['500']
+                on_release: app.show_info_popup()
+                ripple_scale: 0
+'''
+
+# The rest of your code remains the same
